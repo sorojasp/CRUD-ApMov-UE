@@ -13,7 +13,7 @@ boton.addEventListener(("click"),()=>{
     
 
     console.log(persona);
-        $("#hijo").append(`<div id="elementChild${count}" value=${count}> 
+        $("#hijo").append(`<div id="elementChild${count}" value=${persona[count].codigo}> 
         <h1>${persona[`${count}`].nombre}  </h1><br>
         <input type="button" id="deleteObject${count}" value="delet">
         </div>`);
@@ -33,9 +33,12 @@ boton.addEventListener(("click"),()=>{
 
             })
 
-            $("#hijo").click((e)=>{
+            $("#hijo").click((e)=>{ /*método para detectar si se hace click en alguno
+                de los hijos del elemento con id="hijo"
+                */
+                let childsRemove=$(`#${e.target.id}`).parent().attr("id");/*con esta función se 
                 
-                let childsRemove=$(`#${e.target.id}`).parent().attr("id");
+                */
                 let identify=$(`#${e.target.id}`).parent().attr("value");
                 console.log(`Est es el identificador:${identify}`);
 
